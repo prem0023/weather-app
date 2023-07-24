@@ -1,5 +1,4 @@
 import { Outlet, createBrowserRouter } from "react-router-dom";
-import Home from "./components/Home";
 import Error from "./components/Error";
 import City from "./components/City";
 import WeatherReport from "./components/WeatherReport";
@@ -22,9 +21,11 @@ const AppLayout = () => {
         setPlace: setPlace,
       }}
     >
-      <Home />
-      <div className="w-1/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <Outlet />
+      <div class="h-screen flex items-center justify-center">
+        <div class="z-10 bg-sky-500 h-screen w-screen"></div>
+        <div class="z-20 absolute top-0 left-0 h-full w-full flex items-center justify-center">
+          <Outlet />
+        </div>
       </div>
     </LocationContext.Provider>
   );
